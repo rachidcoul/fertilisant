@@ -1,0 +1,27 @@
+<div>
+  <form [formGroup]="communeForm" (ngSubmit)="onSubmit()">
+
+    <h2>Ajouter une Commune</h2>
+    <div>
+      <label for="province">Province</label>
+      <select id="province" formControlName="province">
+        <option *ngFor="let province of provinces" [ngValue]="province">{{ province.libelle }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="codeDgess">codeDgess</label>
+      <input id="codeDgess" formControlName="codeDgess" type="text">
+    </div>
+    <div>
+      <label for="codeIgb">codeIgb</label>
+      <input id="codeIgb" formControlName="codeIgb" type="text">
+    </div>
+    <div>
+      <label for="libelle">Libellé</label>
+      <input id="libelle" formControlName="libelle" type="text">
+    </div>
+    <button type="submit" [disabled]="communeForm.invalid">Valider</button>
+
+  </form>
+<div>

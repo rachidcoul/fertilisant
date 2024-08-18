@@ -1,0 +1,32 @@
+<div>
+    <h2> Liste des Communes</h2>
+
+    <div class="btn-div">
+        <a class="button-save" href="/add-commune">AJOUTER</a>
+    </div>
+    <table id="communes">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>CODE_DGESS</th>
+                <th>CODE_IGB</th>
+                <th>LIBELLE</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let commune of communes">
+                <td>{{commune.id}}</td>
+                <td>{{commune.codeDgess}}</td>
+                <td>{{commune.codeIgb}}</td>
+                <td>{{commune.libelle}}</td>
+                <td>
+                    <a class="button-editer" href="/edit-commune/{{commune.id}}">Editer</a>
+                    <button class="button-action" (click)="delete(commune.id!)">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+
+  <form [formGroup]="editRequerantForm" (ngSubmit)="onSubmit()">
+    <h2>Edit Requerant</h2>
+    <div hidden class="form-group">
+      <label for="id">id</label>
+      <input id="id" formControlName="id" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="nomPrenom">Nom Prénom(s)</label>
+      <input id="nomPrenom" formControlName="nomPrenom" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="dateNaissance">Date Naissance</label>
+      <input id="dateNaissance" formControlName="dateNaissance" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="cnib">CNIB</label>
+      <input id="cnib" formControlName="cnib" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="contact">Contact</label>
+      <input id="contact" formControlName="contact" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="editRequerantForm.invalid">Save</button>
+  </form>
+</div>

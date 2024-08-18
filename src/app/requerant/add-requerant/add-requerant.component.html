@@ -1,0 +1,286 @@
+<div>
+  <form (ngSubmit)="onSubmit()">
+
+    <h2>Ajouter un Requerant et sa Demande d'Agrément</h2>
+
+    <div class="form-group">
+      <label for="commune">Commune</label>
+      <!-- <select > id="commune" formControlName="commune" -->
+      <select>
+        <option *ngFor="let commune of communes" [ngValue]="commune">{{ commune.libelle }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="nomPrenom">Nom Prénom</label>
+      <input type="text" id="nomPrenom" [(ngModel)]="requerant.nomPrenom" name="nomPrenom" required>
+    </div>
+    <div class="form-group">
+      <label for="dateNaissance">Date de Naissance</label>
+      <input type="date" id="dateNaissance" [(ngModel)]="requerant.dateNaissance" name="dateNaissance" required>
+    </div>
+    <div class="form-group">
+      <label for="cnib">CNIB</label>
+      <input type="text" id="cnib" [(ngModel)]="requerant.cnib" name="cnib" required>
+    </div>
+    <div class="form-group">
+      <label for="numRccm">Numero RCCM</label>
+      <input type="text" id="numRccm" [(ngModel)]="requerant.numRccm" name="numRccm" required>
+    </div>
+    <div class="form-group">
+      <label for="numIfu">Numero iffu</label>
+      <input type="text" id="numIfu" [(ngModel)]="requerant.numIfu" name="numIfu" required>
+    </div>
+    <div class="form-group">
+      <label for="contact">Contact</label>
+      <input type="text" id="contact" [(ngModel)]="requerant.contact" name="contact" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" id="email" [(ngModel)]="requerant.email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="dateDemande">Date De la Demande</label>
+      <input type="date" id="dateDemande" [(ngModel)]="demandeAgrement.dateDemande" name="dateDemande" required>
+    </div>
+    <div class="form-group">
+      <label for="validationProvince">Validation Province</label>
+      <input type="text" id="validationProvince" [(ngModel)]="demandeAgrement.validationProvince"
+        name="validationProvince" required>
+    </div>
+    <div class="form-group">
+      <label for="dateValidationProvince">Date Validation Province</label>
+      <input type="date" id="dateValidationProvince" [(ngModel)]="demandeAgrement.dateValidationProvince"
+        name="dateValidationProvince" required>
+    </div>
+    <div class="form-group">
+      <label for="validationRegion">Validation Région</label>
+      <input type="text" id="validationRegion" [(ngModel)]="demandeAgrement.validationRegion" name="validationRegion"
+        required>
+    </div>
+    <div class="form-group">
+      <label for="dateValidationRegion">Date Validation Région</label>
+      <input type="date" id="dateValidationRegion" [(ngModel)]="demandeAgrement.dateValidationRegion"
+        name="dateValidationRegion" required>
+    </div>
+    <div class="form-group">
+      <label for="validationCentral">Validation Centrale</label>
+      <input type="text" id="validationCentral" [(ngModel)]="demandeAgrement.validationCentral" name="validationCentral"
+        required>
+    </div>
+    <div class="form-group">
+      <label for="dateValidationCentral">Date Validation Centrale</label>
+      <input type="date" id="dateValidationCentral" [(ngModel)]="demandeAgrement.dateValidationCentral"
+        name="dateValidationCentral" required>
+    </div>
+    <div class="form-group">
+      <label for="codeAgrement">Code Agrément</label>
+      <input type="text" id="codeAgrement" [(ngModel)]="demandeAgrement.codeAgrement" name="codeAgrement" required>
+    </div>
+    <div class="form-group">
+      <label for="activite">Activité</label>
+      <input type="text" id="activite" [(ngModel)]="demandeAgrement.activite" name="activite" required>
+    </div>
+
+    <button type="submit">Valider</button>
+
+  </form>
+</div>
+
+
+<!-- <div>
+  <form (ngSubmit)="saveRequerant()">
+
+    <h2>Ajouter un Requerant</h2>
+    
+    <div>
+      <label for="commune">Commune</label>
+      <select id="commune" formControlName="commune">
+        <option *ngFor="let commune of communes" [ngValue]="commune">{{ commune.libelle }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="nomPrenom">Nom Prénom</label>
+      <input type="text" id="nomPrenom" [(ngModel)]="requerant.nomPrenom" name="nomPrenom" required>
+    </div>
+    <div class="form-group">
+      <label for="dateNaissance">Date de Naissance</label>
+      <input type="date" id="dateNaissance" [(ngModel)]="requerant.dateNaissance" name="dateNaissance" required>
+    </div>
+    <div class="form-group">
+      <label for="cnib">CNIB</label>
+      <input type="text" id="cnib" [(ngModel)]="requerant.cnib" name="cnib" required>
+    </div>
+    <div class="form-group">
+      <label for="numRccm">Numero RCCM</label>
+      <input type="text" id="numRccm" [(ngModel)]="requerant.numRccm" name="numRccm" required>
+    </div>
+    <div class="form-group">
+      <label for="numIfu">Numero iffu</label>
+      <input type="text" id="numIfu" [(ngModel)]="requerant.numIfu" name="numIfu" required>
+    </div>
+    <div class="form-group">
+      <label for="contact">Contact</label>
+      <input type="text" id="contact" [(ngModel)]="requerant.contact" name="contact" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" id="email" [(ngModel)]="requerant.email" name="email" required>
+    </div>
+
+  </form>
+
+
+  <form (ngSubmit)="saveDemandeAgrement()">
+    <div class="form-group">
+      <label for="dateDemande">Date De la de Demande</label>
+      <input type="date" id="dateDemande" [(ngModel)]="demandeAgrement.dateDemande" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="validationProvince">validationProvince</label>
+      <input type="text" id="validationProvince" [(ngModel)]="demandeAgrement.validationProvince" name="validationProvince" required>
+    </div>
+
+    <div class="form-group">
+      <label for="dateValidationProvince">dateValidationProvince</label>
+      <input type="date" id="dateValidationProvince" [(ngModel)]="demandeAgrement.dateValidationProvince"
+        name="dateValidationProvince" required>
+    </div>
+    <div class="form-group">
+      <label for="validationRegion">validationRegion</label>
+      <input type="text" id="validationRegion" [(ngModel)]="demandeAgrement.validationRegion" name="validationRegion"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="dateValidationRegion">dateValidationRegion</label>
+      <input type="date" id="dateValidationRegion" [(ngModel)]="demandeAgrement.dateValidationRegion"
+        name="dateValidationRegion" required>
+    </div>
+
+    <div class="form-group">
+      <label for="validationCentral">validationCentral</label>
+      <input type="text" id="validationCentral" [(ngModel)]="demandeAgrement.validationCentral" name="validationCentral"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="dateValidationCentral">dateValidationCentral</label>
+      <input type="date" id="dateValidationCentral" [(ngModel)]="demandeAgrement.dateValidationCentral"
+        name="dateValidationCentral" required>
+    </div>
+
+    <div class="form-group">
+      <label for="codeAgrement">codeAgrement</label>
+      <input type="text" id="codeAgrement" [(ngModel)]="demandeAgrement.codeAgrement" name="codeAgrement" required>
+    </div>
+
+    <div class="form-group">
+      <label for="activite">activite</label>
+      <input type="text" id="activite" [(ngModel)]="demandeAgrement.activite" name="activite" required>
+    </div>
+
+  </form>
+  <button type="submit">Valider</button>
+</div> -->
+
+
+<!-- <div>
+  <form [formGroup]="requerantForm">
+
+    <h2>Ajouter un Requerant</h2>
+    <div>
+      <label for="commune">Commune</label>
+      <select id="commune" formControlName="commune">
+        <option *ngFor="let commune of communes" [ngValue]="commune">{{ commune.libelle }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="nomPrenom">Nom Prénom</label>
+      <input id="nomPrenom" formControlName="nomPrenom" type="text">
+    </div>
+
+    <div>
+      <label for="dateNaissance">Date de Naissance</label>
+      <input id="dateNaissance" formControlName="dateNaissance" type="date">
+    </div>
+
+    <div>
+      <label for="cnib">CNIB</label>
+      <input id="cnib" formControlName="cnib" type="text">
+    </div>
+
+    <div>
+      <label for="numRccm">Numero Rccm</label>
+      <input id="numRccm" formControlName="numRccm" type="text">
+    </div>
+
+    <div>
+      <label for="numIfu">Numero Ifu</label>
+      <input id="numIfu" formControlName="numIfu" type="text">
+    </div>
+
+    <div>
+      <label for="contact">Contact</label>
+      <input id="contact" formControlName="contact" type="text">
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="text">
+    </div>
+  
+  </form>
+
+
+  <form [formGroup]="demandeForm">
+    <div>
+      <label for="dateDemande">dateDemande</label>
+      <input id="dateDemande" formControlName="dateDemande" type="date">
+    </div>
+
+    <div>
+      <label for="validationProvince">validationProvince</label>
+      <input id="validationProvince" formControlName="validationProvince" type="B">
+    </div>
+
+    <div>
+      <label for="dateValidationProvince">dateValidationProvince</label>
+      <input id="dateValidationProvince" formControlName="dateValidationProvince" type="date">
+    </div>
+    <div>
+      <label for="validationRegion">validationRegion</label>
+      <input id="validationRegion" formControlName="validationRegion" type="text">
+    </div>
+
+    <div>
+      <label for="dateValidationRegion">dateValidationRegion</label>
+      <input id="dateValidationRegion" formControlName="dateValidationRegion" type="date">
+    </div>
+
+    <div>
+      <label for="validationCentral">validationCentral</label>
+      <input id="validationCentral" formControlName="validationCentral" type="text">
+    </div>
+
+    <div>
+      <label for="dateValidationCentral">dateValidationCentral</label>
+      <input id="dateValidationCentral" formControlName="dateValidationCentral" type="date">
+    </div>
+
+    <div>
+      <label for="codeAgrement">codeAgrement</label>
+      <input id="codeAgrement" formControlName="codeAgrement" type="text">
+    </div>
+
+    <div>
+      <label for="activite">activite</label>
+      <input id="activite" formControlName="activite" type="text">
+    </div>
+
+  </form>
+  <button type="submit">Valider</button>
+</div> -->

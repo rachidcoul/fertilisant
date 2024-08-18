@@ -1,0 +1,33 @@
+<div>
+    <h2> Liste des provinces</h2>
+
+    <div class="btn-div">
+        <a class="button-save" href="/add-province">AJOUTER</a>
+    </div>
+
+    <table id="provinces">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>CODE_DGESS</th>
+                <th>CODE_IGB</th>
+                <th>LIBELLE</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let province of provinces">
+                <td>{{province.id}}</td>
+                <td>{{province.codeDgess}}</td>
+                <td>{{province.codeIgb}}</td>
+                <td>{{province.libelle}}</td>
+                <td>
+                    <a class="button-editer" href="/edit-province/{{province.id}}">Modifier</a>
+                    <button class="button-action" (click)="delete(province.id!)">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

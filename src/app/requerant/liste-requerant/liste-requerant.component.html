@@ -1,0 +1,40 @@
+<div>
+    <h2> Liste des Requerants</h2>
+
+    <div class="btn-div">
+        <a class="button-save" href="/add-requerant">AJOUTER</a>
+    </div>
+    <table id="requerants">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOM_PRENOM(s)</th>
+                <th>DATE_NAISSANCE</th>
+                <th>NUMERO_CNIB</th>
+                <th>CONTACT</th>
+                <th>EMAIL</th>
+                <th>NUMERO_RCCM</th>
+                <th>NUMERO_IFU</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let requerant of requerants ">
+                <td>{{requerant.id}}</td>
+                <td>{{requerant.nomPrenom}}</td>
+                <td>{{requerant.dateNaissance}}</td>
+                <td>{{requerant.cnib}}</td>
+                <td>{{requerant.contact}}</td>
+                <td>{{requerant.email}}</td>
+                <td>{{requerant.numRccm}}</td>
+                <td>{{requerant.numIfu}}</td>
+
+                <td>
+                    <a class="button-editer" href="/edit-requerant/{{requerant.id}}">Editer</a>
+                    <button class="button-action" (click)="delete(requerant.id!)">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

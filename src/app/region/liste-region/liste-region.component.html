@@ -1,0 +1,44 @@
+<div>
+    <h2> Liste des régions</h2>
+
+    <div class="btn-div">
+        <a class="button-save" href="/add-region">AJOUTER</a>
+    </div>
+
+    <table id="regions">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>CODE_DGESS</th>
+                <th>CODE_IGB</th>
+                <th>LIBELLE</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let region of regions">
+                <td>{{region.id}}</td>
+                <td>{{region.codeDgess}}</td>
+                <td>{{region.codeIgb}}</td>
+                <td>{{region.libelle}}</td>
+                <td>
+                    <a class="button-action" href="/edit-region/{{region.id}}">Editer</a>
+                    <button class="button-action" (click)="delete(region.id!)">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+<!-- <div class="pagination">
+        <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Précédent</button>
+        <span>Page {{ currentPage }} sur {{ totalItems && pageSize ? Math.ceil(totalItems / pageSize) : 1 }}</span>
+        <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === Math.ceil(totalItems / pageSize)">Suivant</button>
+    </div> -->
+<!-- <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator> -->

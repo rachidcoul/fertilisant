@@ -1,0 +1,26 @@
+
+<div class="container">
+    
+    <form [formGroup]="editProvinceForm" (ngSubmit)="onSubmit()">
+      <h2>Edit Province</h2>
+      <div hidden class="form-group">
+        <label for="id">id</label>
+        <input id="id" formControlName="id" class="form-control" />
+      </div>  
+      <div class="form-group">
+        <label for="codeDgess">codeDgess</label>
+        <input id="codeDgess" formControlName="codeDgess" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="codeIgb">codeIgb</label>
+        <input id="codeIgb" formControlName="codeIgb" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="libelle">libellé</label>
+        <input id="libelle" formControlName="libelle" class="form-control" />
+      </div>
+      
+      <button type="submit" class="btn btn-primary" [disabled]="editProvinceForm.invalid">Save</button>
+    </form>
+  </div>
+

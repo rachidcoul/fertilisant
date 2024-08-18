@@ -1,0 +1,46 @@
+#requerants {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  h2 {
+    font-size: 25px;
+    color: #4CAF50;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  #requerants td, #requerants th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #requerants tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #requerants tr:hover {background-color: #ddd;}
+  
+  #requerants th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .button-action {
+    margin: 15px;
+
+  }
+  
+  .button-save {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin-left: 90%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }

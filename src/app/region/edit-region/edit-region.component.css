@@ -1,0 +1,64 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 1300px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ddd;
+}
+
+h2 {
+    text-align: left;
+    font-size: 25px;
+    color: #4CAF50;
+    text-align: left;
+    font-weight: 600;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    width: 200px;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    margin-bottom: 15px;
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+
+input[type="text"], select {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    padding: 10px;
+    width: 150px;
+    margin-left: 520px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
